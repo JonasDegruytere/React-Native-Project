@@ -80,7 +80,7 @@ import {
     );
   }
   
-  const styles = StyleSheet.create({
+ const styles = StyleSheet.create({
     scrollContainer: {
       paddingHorizontal: 15,
     },

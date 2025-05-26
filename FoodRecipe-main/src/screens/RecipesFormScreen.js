@@ -4,7 +4,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import {widthPercentageToDP as wp,heightPercentageToDP as hp,} from "react-native-responsive-screen";
 
 export default function RecipesFormScreen({ route, navigation }) {
-  const { recipeToEdit, recipeIndex, onrecipeEdited } = route.params || {};
+  const { recipeToEdit, recipeIndex } = route.params || {};
   const [title, setTitle] = useState(recipeToEdit ? recipeToEdit.title : "");
   const [image, setImage] = useState(recipeToEdit ? recipeToEdit.image : "");
   const [description, setDescription] = useState(
@@ -12,7 +12,27 @@ export default function RecipesFormScreen({ route, navigation }) {
   );
 
   const saverecipe = async () => {
- 
+
+    const newRecipe = { title, image, description };
+    try {
+      const existingRecipes = await AsyncStorage.getItem("customRecipes");
+      const recipes = existingRecipes ? JSON.parse(existingRecipes) : [];
+      if (recipeToEdit !== undefined) {
+        recipes[recipeIndex] = newRecipe;
+        await AsyncStorage.setItem("customRecipes", JSON.stringify(recipes));
+      } else {
+        recipes.push(newRecipe); // Add new recipe
+        await AsyncStorage.setItem("customRecipes", JSON.stringify(recipes));
+      }
+
+      navigation.reset({
+        index:0,
+        routes:[{name:'Home'}]
+      });
+    } catch (error) {
+      console.error("Error saving the recipe:", error);
+    }
+
   };
 
   return (
