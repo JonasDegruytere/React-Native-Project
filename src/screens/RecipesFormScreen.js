@@ -37,6 +37,12 @@ export default function RecipesFormScreen({ route, navigation }) {
 
   return (
     <View style={styles.container}>
+
+        {/* Back Button */}
+        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+            <Text style={styles.backButtonText}>{"Back"}</Text>
+        </TouchableOpacity>
+        
       <TextInput
         placeholder="Title"
         value={title}
@@ -73,6 +79,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: wp(4),
+  },
+  backButton: {
+      backgroundColor: "#4F75FF",
+      padding: wp(.7),
+      marginBottom: hp(1.5),
+      borderRadius: 5,
+  },
+  backButtonText: {
+      fontSize: hp(2.2),
+      color: "#fff",
+      alignSelf: "center",
   },
   input: {
     marginTop: hp(4),

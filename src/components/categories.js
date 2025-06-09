@@ -81,8 +81,9 @@ import {
   }
   
  const styles = StyleSheet.create({
-    scrollContainer: {
-      paddingHorizontal: 15,
+     scrollContainer: {
+         marginHorizontal: wp(4),
+         justifyContent: "space-between",
     },
     categoryContainer: {
       alignItems: "center",

@@ -725,7 +725,7 @@ export default function HomeScreen() {
         <View style={styles.titleContainer}>
           <Text style={styles.title}>Make your own food,</Text>
           <Text style={styles.subtitle}>
-            stay at <Text style={styles.highlight}>home</Text>
+            Cook at <Text style={styles.highlight}>home</Text>
           </Text>
         </View>
 

@@ -113,11 +113,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#F9FAFB",
   },
   backButton: {
+    backgroundColor: "#4F75FF",
+    padding: wp(.7),
     marginBottom: hp(1.5),
+    borderRadius: 5,
   },
   backButtonText: {
     fontSize: hp(2.2),
-    color: "#4F75FF",
+    color: "#fff",
+    alignSelf: "center",
   },
   addButton: {
     backgroundColor: "#4F75FF",
@@ -125,8 +129,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 5,
     width: 300,
-    marginLeft: 500
-    // marginBottom: hp(2),
+    alignSelf: "center",
+    marginBottom: hp(3),
   },
   addButtonText: {
     color: "#fff",
@@ -154,6 +158,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     padding: wp(3),
     borderRadius: 8,
+    margin: hp(2),
     marginBottom: hp(2),
     shadowColor: "#000",
     shadowOpacity: 0.1,
@@ -166,6 +171,7 @@ const styles = StyleSheet.create({
     height: 150, // Adjust height of the image
     borderRadius: 8,
     marginBottom: hp(1),
+    alignSelf: "center",
   },
   recipeTitle: {
     fontSize: hp(2),
